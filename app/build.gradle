@@ -55,4 +55,7 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
     // kotlin扩展（可选）
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+
+    implementation 'com.tencent:mmkv-static:1.0.24'
 }

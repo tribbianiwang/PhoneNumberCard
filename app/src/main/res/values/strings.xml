@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PhoneNumberCard</string>
+    <string name="string_hing_input_username">用户名</string>
+    <string name="string_hint_input_password">密码</string>
+    <string name="string_login">登录</string>
+    <string name="string_choose_city">选择城市</string>
+    <string name="string_normal_net_error">网络故障，联系张中阳谢谢</string>
+    <string name="string_username_empty">用户名不能为空</string>
+    <string name="string_password_empty">密码不能为空</string>
+    <string name="login_success">登录成功</string>
 </resources>

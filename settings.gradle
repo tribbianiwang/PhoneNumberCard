@@ -1,0 +1,2 @@
+rootProject.name='PhoneNumberCard'
+include ':app'

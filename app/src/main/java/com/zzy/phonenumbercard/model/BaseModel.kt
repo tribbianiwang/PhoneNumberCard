@@ -9,6 +9,7 @@ import com.wl.wanandroid.utils.BaseDataResultListener
 
 import com.wl.wanandroid.utils.StringUtils
 import com.zzy.phonenumbercard.R
+import com.zzy.phonenumbercard.bean.CityBean
 import com.zzy.phonenumbercard.utils.AppConstants
 import com.zzy.phonenumbercard.utils.LogUtils
 import rx.Observable
@@ -66,17 +67,23 @@ open class BaseModel<T>(dataResultListener: BaseDataResultListener<T>){
 
 
         baseObserver= selectMethod?.let { invokeMethodInBaseModel(it,commonParams) }
+        LogUtils.d("alreadygetMethod","startResult:${baseObserver}")
 
        baseSubscription= baseObserver?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())
                 ?.subscribe(object:Subscriber<T>(){
                     override fun onNext(t: T) {
+                        if(t is CityBean){
+                            LogUtils.d("citybeans--","onNext")
+                        }
                         callBack.invoke(t)
                     }
 
                     override fun onCompleted() {
+                        LogUtils.d("citybeans--","onCompleted")
                     }
 
                     override fun onError(e: Throwable) {
+                        LogUtils.e("citybeans--",e.message.toString())
                         dataResultListener.setQueryStatus(AppConstants.QUERYSTATUSFAILED)
                        dataResultListener.setErrorMsg(e.message.toString())
                     }
@@ -104,7 +111,7 @@ open class BaseModel<T>(dataResultListener: BaseDataResultListener<T>){
 
        when(commonParams.size){
 
-           1->selectMethod?.invoke(GetRetrofitService.retrofitService,commonParams[0]) as Observable<T>
+           1->return selectMethod?.invoke(GetRetrofitService.retrofitService,commonParams[0]) as Observable<T>
            2-> return  selectMethod?.invoke(GetRetrofitService.retrofitService,commonParams[0],commonParams[1]) as Observable<T>
           3-> return  selectMethod?.invoke(GetRetrofitService.retrofitService,commonParams[0],commonParams[1],commonParams[2]) as Observable<T>
 

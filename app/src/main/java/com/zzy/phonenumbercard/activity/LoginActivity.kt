@@ -1,15 +1,19 @@
 package com.zzy.phonenumbercard.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.tencent.mmkv.MMKV
 import com.wl.wanandroid.utils.StringUtils
 import com.wl.wanandroid.utils.T
 import com.zzy.phonenumbercard.R
 import com.zzy.phonenumbercard.bean.LoginBean
+import com.zzy.phonenumbercard.bean.LoginDataBean
 import com.zzy.phonenumbercard.utils.AppConstants
+import com.zzy.phonenumbercard.utils.CookieUtils
 import com.zzy.phonenumbercard.utils.DeviceUtils
 import com.zzy.phonenumbercard.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
@@ -28,6 +32,16 @@ class LoginActivity : BaseActivity() {
 
         var loginObserver = Observer<LoginBean>{
             T.showShort(LoginActivity@this,StringUtils.getString(R.string.login_success))
+            CookieUtils.setIsLogin(true)
+            var loginDataBean = LoginDataBean()
+            loginDataBean.loginId = et_username.text.toString()
+            loginDataBean.password = et_password.text.toString()
+            CookieUtils.setLoginData(loginDataBean)
+
+            startActivity(Intent(LoginActivity@this,MainActivity::class.java))
+            finish()
+
+
         }
 
         loginViewModel.baseResultLiveData.observe(this,loginObserver)

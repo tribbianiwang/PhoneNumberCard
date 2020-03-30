@@ -9,10 +9,7 @@ import com.tencent.mmkv.MMKV
 import com.zzy.phonenumbercard.activity.BaseActivity
 import com.zzy.phonenumbercard.activity.LoginActivity
 import com.zzy.phonenumbercard.activity.MainActivity
-import com.zzy.phonenumbercard.utils.AppConstants
-import com.zzy.phonenumbercard.utils.DeviceUtils
-import com.zzy.phonenumbercard.utils.ImmerBarUtils
-import com.zzy.phonenumbercard.utils.LogUtils
+import com.zzy.phonenumbercard.utils.*
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -27,12 +24,12 @@ class SplashActivity : BaseActivity() {
         ImmerBarUtils.initImmerBar(this,R.color.DarkGray)
 
         LogUtils.d("uniqueId--","imei${DeviceUtils.getUniqueId(this)}")
-        startAnim()
+//        startAnim()
 
         GlobalScope.launch(Dispatchers.Main) {
             delay(1000L)
              var isLogin = MMKV.defaultMMKV().decodeBool(AppConstants.KEY_IS_LOGIN,false)
-            var intent = Intent(this@SplashActivity, if(isLogin)MainActivity::class.java else LoginActivity::class.java)
+            var intent = Intent(this@SplashActivity, if(CookieUtils.getIsLogin())MainActivity::class.java else LoginActivity::class.java)
             startActivity(intent)
             finish()
 

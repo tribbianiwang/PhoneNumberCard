@@ -22,4 +22,6 @@ object AppConstants {
 
     const val TRUE = "true"
 
+    const val ISLOGIN = "ISLOGIN"
+
 }

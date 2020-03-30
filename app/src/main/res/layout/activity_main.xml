@@ -1,41 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="10"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_weight="3"
+        android:id="@+id/rv_province"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_city"
+        android:layout_marginLeft="@dimen/app_margin_small"
+        android:layout_weight="7"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"/>
 
 
 
-    <TextView
-        android:id="@+id/tv_select_city"
-        android:foreground="?selectableItemBackground"
-        android:layout_marginLeft="@dimen/app_margin_right"
-        android:layout_marginRight="@dimen/app_margin_right"
-        android:layout_marginTop="@dimen/app_margin_top"
-        android:background="@color/gray_white"
-        android:paddingTop="@dimen/app_margin_left"
-        android:paddingBottom="@dimen/app_margin_left"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/small_text_size"
-        android:textColor="@color/design_text_black"
-        android:text="@string/string_choose_city"
-        />
-
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/small_text_size"
-        android:textColor="@color/design_text_black"
-        android:layout_marginLeft="@dimen/app_margin_left"
-        android:layout_marginRight="@dimen/app_margin_left"
-        android:layout_marginTop="@dimen/app_margin_top"
-        />
-
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

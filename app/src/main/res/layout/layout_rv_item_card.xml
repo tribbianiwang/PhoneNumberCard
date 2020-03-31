@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginBottom="@dimen/app_margin_left"
+    android:layout_marginLeft="@dimen/app_margin_left"
+    android:layout_marginRight="@dimen/app_margin_left"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_cn_no"
+        android:foreground="?selectableItemBackground"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_weight="1.8"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/string_cn_no"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/design_text_gray"
+        />
+
+        <TextView
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_cn_no"
+
+            android:layout_height="wrap_content"
+            android:text="居易"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/ll_name"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/string_name"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_gray"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_name"
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="张三"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/ll_card_type"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/string_card_type"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_gray"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_card_type"
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="大王卡"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/ll_phone_number"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/string_phone_number"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_gray"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_phone_number"
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="15238322537"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/ll_location"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/string_location"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_gray"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_location"
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="河南省郑州市"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/ll_action_time"
+        android:layout_marginLeft="@dimen/app_margin_left"
+        android:layout_marginRight="@dimen/app_margin_left"
+        android:paddingTop="@dimen/app_margin_left"
+        android:paddingBottom="@dimen/app_margin_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/string_action_time"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_gray"
+            />
+
+        <TextView
+            android:layout_marginLeft="@dimen/app_margin_left"
+            android:id="@+id/tv_action_time"
+            android:layout_weight="8.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2020/1/19 15:12:39"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/design_text_black"
+            />
+    </LinearLayout>
+</LinearLayout>

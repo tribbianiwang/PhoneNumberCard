@@ -13,10 +13,10 @@ class GetCitysModel(dataResultListener: BaseDataResultListener<CityBean>) :
 
         getServerData(pwd_jiami,methodName = "getCityList",callBack = object :OnSuccessCallback<CityBean>{
             override fun invoke(t: CityBean) {
-//                if(vertifyResultError(t.Result,t.Errorinfo)){
+                if(vertifyResultError(t.Result,t.Errorinfo)){
                     dataResultListener.setQueryStatus(AppConstants.QUERYSTATUSSUCCESS)
                     dataResultListener.setResultData(t)
-//                }
+                }
 
             }
 

@@ -13,6 +13,7 @@ import com.zzy.phonenumbercard.R
 import com.zzy.phonenumbercard.bean.CardDetailBean
 import com.zzy.phonenumbercard.bean.CityBean
 import com.zzy.phonenumbercard.utils.AppConstants
+import com.zzy.phonenumbercard.utils.AppConstants.TRANS_CITY
 import com.zzy.phonenumbercard.utils.CookieUtils
 import com.zzy.phonenumbercard.utils.DeviceUtils
 import com.zzy.phonenumbercard.utils.LogUtils
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
     lateinit var getCityViewModel:GetCitysViewModel
-    lateinit var cardDetaiViewModel: CardDetailViewModel
+
     var cityBean:CityBean?=null
     var rvProvinceAdapter:RvProvinceAdapter?=null
     var rvCityAdapter:RvCityAdapter?=null
@@ -37,10 +38,10 @@ class MainActivity : BaseActivity() {
         rv_city.layoutManager = GridLayoutManager(this,2)
 
         getCityViewModel = ViewModelProviders.of(this).get(GetCitysViewModel::class.java)
-        cardDetaiViewModel = ViewModelProviders.of(this).get(CardDetailViewModel::class.java)
+
 
         lifecycle.addObserver(getCityViewModel)
-        lifecycle.addObserver(cardDetaiViewModel)
+
 
 
 
@@ -52,18 +53,12 @@ class MainActivity : BaseActivity() {
 
         }
 
-        var cardDetailObserver = Observer<CardDetailBean>{
-            LogUtils.d("cName","cname:${it.listMBInfo.size}")
 
-        }
 
         getCityViewModel.baseResultLiveData.observe(this,cityBeansObserver)
         getCityViewModel.queryStatusLiveData.observe(this,queryStatusObserver)
         getCityViewModel.errorMsgLiveData.observe(this,errorMsgObserver)
 
-        cardDetaiViewModel.baseResultLiveData.observe(this,cardDetailObserver)
-        cardDetaiViewModel.queryStatusLiveData.observe(this,queryStatusObserver)
-        cardDetaiViewModel.errorMsgLiveData.observe(this,errorMsgObserver)
 
 
         getCityViewModel.getCityList(AppConstants.COMMON_KEY)
@@ -84,8 +79,12 @@ class MainActivity : BaseActivity() {
             rvCityAdapter?.onRvItemClickListener = object : OnRvItemClickListener {
                 override fun onItemClick(position: Int) {
                     LogUtils.d("点击了","cityBean${cityDatas.get(position)}")
-                    var loginData = CookieUtils.getLoginData()
-                    cardDetaiViewModel.getCardDetail(loginData.loginId,loginData.password,DeviceUtils.getUniqueId(this@MainActivity),cityDatas.get(position),AppConstants.COMMON_KEY)
+                    var intent = Intent(this@MainActivity,CardListActivity::class.java)
+                    intent.putExtra(TRANS_CITY,cityDatas.get(position))
+                    startActivity(intent)
+
+
+
                 }
 
             }

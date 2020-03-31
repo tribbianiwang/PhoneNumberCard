@@ -24,4 +24,6 @@ object AppConstants {
 
     const val ISLOGIN = "ISLOGIN"
 
+    const val TRANS_CITY = "TRANS_CITY"
+
 }

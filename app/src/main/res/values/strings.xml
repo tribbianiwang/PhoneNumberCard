@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PhoneNumberCard</string>
+    <string name="app_name">张中阳电话卡</string>
     <string name="string_hing_input_username">用户名</string>
     <string name="string_hint_input_password">密码</string>
     <string name="string_login">登录</string>
@@ -8,4 +8,13 @@
     <string name="string_username_empty">用户名不能为空</string>
     <string name="string_password_empty">密码不能为空</string>
     <string name="login_success">登录成功</string>
+    <string name="string_card_list">电话卡</string>
+    <string name="string_cn_no">c_NO:</string>
+    <string name="string_name">姓名:</string>
+    <string name="string_action_time">激活时间:</string>
+    <string name="string_phone_number">手机号:</string>
+    <string name="string_province">位置:</string>
+    <string name="string_location">位置:</string>
+    <string name="string_card_type">卡类型:</string>
+    <string name="string_copy_toclip">已复制到粘贴板</string>
 </resources>

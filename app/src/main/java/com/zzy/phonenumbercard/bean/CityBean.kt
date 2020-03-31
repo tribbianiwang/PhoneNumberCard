@@ -1,7 +1,7 @@
 package com.zzy.phonenumbercard.bean
 
 data class CityBean(
-    val Errorinfo: Any,
+    val Errorinfo: String,
     val Result: Boolean,
     val listC_City: List<CCity>
 )

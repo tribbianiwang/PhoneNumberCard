@@ -15,6 +15,7 @@ import com.zzy.phonenumbercard.bean.LoginDataBean
 import com.zzy.phonenumbercard.utils.AppConstants
 import com.zzy.phonenumbercard.utils.CookieUtils
 import com.zzy.phonenumbercard.utils.DeviceUtils
+import com.zzy.phonenumbercard.utils.ImmerBarUtils
 import com.zzy.phonenumbercard.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -25,6 +26,7 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        ImmerBarUtils.initImmerBar(this,R.color.gray_white)
 
         loginViewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
@@ -47,6 +49,7 @@ class LoginActivity : BaseActivity() {
         loginViewModel.baseResultLiveData.observe(this,loginObserver)
         loginViewModel.queryStatusLiveData.observe(this,queryStatusObserver)
         loginViewModel.errorMsgLiveData.observe(this,errorMsgObserver)
+        et_username.setText(CookieUtils.getLoginData()?.loginId)
 
 
         bt_login.setOnClickListener {

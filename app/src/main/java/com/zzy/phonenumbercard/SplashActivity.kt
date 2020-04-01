@@ -29,7 +29,8 @@ class SplashActivity : BaseActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             delay(1000L)
              var isLogin = MMKV.defaultMMKV().decodeBool(AppConstants.KEY_IS_LOGIN,false)
-            var intent = Intent(this@SplashActivity, if(CookieUtils.getIsLogin())MainActivity::class.java else LoginActivity::class.java)
+//            var intent = Intent(this@SplashActivity, if(CookieUtils.getIsLogin())MainActivity::class.java else LoginActivity::class.java)
+            var intent = Intent(this@SplashActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
 

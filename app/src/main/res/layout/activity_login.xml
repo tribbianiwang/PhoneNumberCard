@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_white"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".activity.LoginActivity">
@@ -24,7 +25,7 @@
         android:textColor="@color/design_text_black"
         android:hint="@string/string_hing_input_username"
         android:textColorHint="@color/design_text_gray"
-        android:layout_marginTop="@dimen/margin_50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="@dimen/app_margin_larger"
         android:layout_marginRight="@dimen/app_margin_larger"
         android:maxLines="1"
@@ -49,6 +50,7 @@
 
     <Button
         android:layout_marginTop="@dimen/app_margin_larger"
+        android:layout_marginBottom="100dp"
         android:id="@+id/bt_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

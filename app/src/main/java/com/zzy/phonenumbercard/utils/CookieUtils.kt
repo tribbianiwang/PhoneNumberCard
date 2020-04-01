@@ -23,7 +23,7 @@ class CookieUtils {
              MMKV.defaultMMKV().encode("loginDataBean",loginDataBean)
          }
 
-         fun getLoginData():LoginDataBean{
+         fun getLoginData():LoginDataBean?{
              return    MMKV.defaultMMKV().decodeParcelable("loginDataBean",LoginDataBean::class.java)
          }
 

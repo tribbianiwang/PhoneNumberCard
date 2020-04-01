@@ -58,7 +58,7 @@ class CardListActivity : BaseActivity() {
         cardDetaiViewModel.errorMsgLiveData.observe(this,errorMsgObserver)
 
         var loginData = CookieUtils.getLoginData()
-        cardDetaiViewModel.getCardDetail(loginData.loginId,loginData.password, DeviceUtils.getUniqueId(CardListActivity@this),city,AppConstants.COMMON_KEY)
+        cardDetaiViewModel.getCardDetail(loginData?.loginId?:"",loginData?.password?:"", DeviceUtils.getUniqueId(CardListActivity@this),city,AppConstants.COMMON_KEY)
 
     }
 

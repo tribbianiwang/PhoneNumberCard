@@ -66,6 +66,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setAdapter() {
+        showProgress(this)
         rvProvinceAdapter = cityBean?.let { RvProvinceAdapter(it) }
 
         rv_province.adapter = rvProvinceAdapter
@@ -101,6 +102,6 @@ class MainActivity : BaseActivity() {
 
         }
 
-
+        hideProgress()
     }
 }
